@@ -15,6 +15,7 @@ book_name="article"
 
 def get_page_url(url):
     try:
+        requests.packages.urllib3.disable_warnings(InsecureRequestWarning) #禁用警告
         text = requests.get(url, headers = headers, verify = False).text
         pattern = re.compile("</dd>.*?<dt>(.*?)</dt>(.*?)</dl>", re.S)
         items = re.findall(pattern, text)

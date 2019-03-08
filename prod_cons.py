@@ -5,7 +5,6 @@ class ProdCons():
 
     FINISHED = False
 
-
     def __init__(self, q, name):
         self.q = q
         self.name = name
@@ -20,7 +19,7 @@ class ProdCons():
         print("生产任务+" self.name + "全部完成")
 
     def consumer(self):
-        while not self.FINISHED or not self.q.empty()  :
+        while not self.FINISHED or not self.q.empty() :
             i = self.q.get()
             print('消费任务'+ self.name + str(i)+'开始')
             #time.sleep(random.randint(1, 10) * 0.1)
